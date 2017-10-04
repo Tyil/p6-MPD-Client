@@ -37,7 +37,7 @@ multi sub mpd-play (
 	IO::Socket::INET $socket
 	--> Bool
 ) is export {
-	mpd-send("play", $socket)
+	response-is-ok(mpd-send("play", $socket))
 }
 
 #| Begins playing the playlist at song number $songpos.
